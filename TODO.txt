@@ -1,0 +1,8 @@
+Move class def before performance timing
+Load WASM into array buffer before performance timing
+Test time to run WASM code both including and excluding compile time
+All scripts: defer
+Test LinkedList with thousands of items
+Multiple trials
+Add readme explaining the four types (c, c_optimized, javascript, wasm)
+Make new folder for performance testing
