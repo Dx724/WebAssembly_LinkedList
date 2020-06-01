@@ -9,13 +9,9 @@ struct LinkedListNode {
 };
 
 int main() {
-    struct LinkedListNode* first = NULL;
-    struct LinkedListNode* second = NULL;
-    struct LinkedListNode* third = NULL;
-
-    first = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
-    second = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
-    third = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
+    struct LinkedListNode* first = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
+    struct LinkedListNode* second = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
+    struct LinkedListNode* third = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
 
     first->value = 1;
     first->nextNode = second;
