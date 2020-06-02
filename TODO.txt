@@ -4,5 +4,16 @@ Test time to run WASM code both including and excluding compile time
 All scripts: defer
 Test LinkedList with thousands of items
 Multiple trials
-Add readme explaining the four types (c, c_optimized, javascript, wasm)
 Make new folder for performance testing
+
+Add readme explaining the four types (c, c_optimized, javascript, wasm)
+Minified JS
+G-zip all source files
+
+README Notes
+Comments removed when calculating file sizes
+No console.log for performance testing, as is relatively expensive operation
+Performance: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1
+Removing global variable from wasm.wat made time go from 8s->5s
+Time to allocate 4GB memory for wasm.js is only about 300 ms
+Growing memory in 100 page chunks results in ~33s execution time
