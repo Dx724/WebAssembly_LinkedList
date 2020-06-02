@@ -2,9 +2,10 @@ Move class def before performance timing
 Load WASM into array buffer before performance timing
 Test time to run WASM code both including and excluding compile time
 All scripts: defer
-Test LinkedList with thousands of items
+DONE Test LinkedList with thousands of items
 Multiple trials
-Make new folder for performance testing
+DONE Make new folder for performance testing
+Standardize count to 200 million for all tests
 
 Add readme explaining the four types (c, c_optimized, javascript, wasm)
 Minified JS
@@ -14,6 +15,9 @@ README Notes
 Comments removed when calculating file sizes
 No console.log for performance testing, as is relatively expensive operation
 Performance: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1
+Memory: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1 -s MAXIMUM_MEMORY=4GB
+Fewer items used for C performance test, as more memory is used --> can use -mx32 compile flag to reach more (though probably slower)
+Using fewer items for JS performance test, as memory error occurs
 Removing global variable from wasm.wat made time go from 8s->5s
 Time to allocate 4GB memory for wasm.js is only about 300 ms
 Growing memory in 100 page chunks results in ~33s execution time

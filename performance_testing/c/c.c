@@ -13,9 +13,9 @@ int main() {
     emscripten_run_script("startTime = performance.now();");
 
     struct LinkedListNode* tempNode = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
-    tempNode->value = 500000000;
+    tempNode->value = 200000000; //Using 500000000 items exceeds the maximum 4GB of memory allowed
     tempNode->nextNode = NULL;
-    for (int i = 49999999; i > 0; i--) {
+    for (int i = 199999999; i > 0; i--) {
         struct LinkedListNode* newNode = (struct LinkedListNode*) malloc(sizeof(struct LinkedListNode));
         newNode->value = i;
         newNode->nextNode = tempNode;

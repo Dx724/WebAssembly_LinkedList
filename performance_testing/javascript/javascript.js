@@ -7,8 +7,8 @@ class LinkedList { //Node: class declarations in JavaScript are hoisted
     }
 }
 
-tempNode = new LinkedList(500000000, null);
-for (var i = 49999999; i > 0; i--) {
+tempNode = new LinkedList(200000000, null);
+for (var i = 199999999; i > 0; i--) {
     tempNode = new LinkedList(i, tempNode);
 }
 
