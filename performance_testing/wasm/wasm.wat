@@ -1,28 +1,41 @@
 (module
     (import "js" "mem" (memory 1)) ;;One page of memory
-    (func $createNode (param $nextNode i32) (param $value i32) (result i32) ;;Return new node address, we choose to have parameters in this order to make calling the function easier
-        local.get $nextNode
-        i32.const 8
-        i32.add
+    (import "console" "log" (func $log (param i32)))
+    (func $createNode (param $nextNode i32) (param $value i32) (result i32) (local $nextAddress i32) ;;Return new node address, we choose to have parameters in this order to make calling the function easier
+        ;; Load free memory pointer to local memory
+        i32.const 0
+        i32.load
+        local.set $nextAddress
+        
         ;; Store value at address
+        local.get $nextAddress
         local.get $value
         i32.store
         ;; Increment address
-        local.get $nextNode
-        i32.const 12 ;;i32 is 32 bits, or 4 bytes
+        local.get $nextAddress
+        i32.const 4 ;;i32 is 32 bits, or 4 bytes
         i32.add
         ;; Store nextNode at address
         local.get $nextNode
         i32.store
 
-        ;; Increment address
-        local.get $nextNode
+        ;; Increment free memory pointer
+        i32.const 0
+        local.get $nextAddress
         i32.const 8
         i32.add
+        i32.store
+
+        ;; Return node address
+        local.get $nextAddress
     )
     (func (export "runCode") (local $tempAddress i32) (local $counter i32)
-        ;;Create Linked List
+        ;; Initialize next free memory pointer
+        i32.const 0
+        i32.const 4
+        i32.store
         
+        ;;Create Linked List        
         i32.const 200000000
         local.set $counter
         i32.const 0 ;;No next address

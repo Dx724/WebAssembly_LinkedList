@@ -5,7 +5,8 @@ mem.grow(62500 - 32767 - 366);
 var importObject = {
     js: {
         mem: mem
-    }
+    },
+    console: {log: console.log}
 };
 
 WebAssembly.instantiateStreaming(fetch("wasm.wasm"), importObject).then(obj => {
