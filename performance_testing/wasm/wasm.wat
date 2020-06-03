@@ -23,7 +23,7 @@
     (func (export "runCode") (local $tempAddress i32) (local $counter i32)
         ;;Create Linked List
         
-        i32.const 500000000
+        i32.const 200000000
         local.set $counter
         i32.const 0 ;;No next address
         local.set $tempAddress
