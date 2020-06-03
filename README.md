@@ -36,7 +36,7 @@ Linked list implementations in C, Javascript, and WebAssembly Text Format
 - The compile and instantiation process of the WASM module at runtime takes under 100 ms.
 - Utilization of -s TOTAL_MEMORY=1999MB in compilation or growing WASM memory to 4GB before running the C code results in a ~2.5s slowdown.
 
-#File Size Comparison
+# File Size Comparison
 - The file sizes of the compiled files being sent to browsers was measured, both with and without gzip compression.
 - For the Javascript code, the file was changed to have single-letter names.
 - A minified version of the Javascript is also included in the data below.
