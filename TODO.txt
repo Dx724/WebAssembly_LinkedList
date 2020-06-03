@@ -1,11 +1,11 @@
-Move class def before performance timing
+[classes are hoisted] Move class def before performance timing
 Load WASM into array buffer before performance timing
 Test time to run WASM code both including and excluding compile time
-All scripts: defer
+[minimal impact] All scripts: defer
 DONE Test LinkedList with thousands of items
-Multiple trials
+DONE Multiple trials
 DONE Make new folder for performance testing
-Standardize count to 200 million for all tests
+DONE Standardize count to 200 million for all tests
 
 Add readme explaining the four types (c, c_optimized, javascript, wasm)
 Minified JS
@@ -22,3 +22,7 @@ Removing global variable from wasm.wat made time go from 8s->5s
 Time to allocate 4GB memory for wasm.js is only about 300 ms
 Growing memory in 100 page chunks results in ~33s execution time
 Using memory loads instead of a local variable for the WAT code showed only a slight increase in runtime
+The time for emscripten_run_script in the C code was measured to be approximately 0.2 milliseconds
+Adding compile time to WASM script has minimal effect (under 100 milliseconds)
+
+37/23.8 Internet Speed
