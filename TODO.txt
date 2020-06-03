@@ -1,28 +1,31 @@
 [classes are hoisted] Move class def before performance timing
-Load WASM into array buffer before performance timing
-Test time to run WASM code both including and excluding compile time
+DONELoad WASM into array buffer before performance timing
+DONETest time to run WASM code both including and excluding compile time
 [minimal impact] All scripts: defer
 DONE Test LinkedList with thousands of items
 DONE Multiple trials
 DONE Make new folder for performance testing
 DONE Standardize count to 200 million for all tests
 
-Add readme explaining the four types (c, c_optimized, javascript, wasm)
-Minified JS
-G-zip all source files
+DONE Compare file sizes
+
+DONE Add readme explaining the four types (c, c_optimized, javascript, wasm)
+DONE Minified JS
+DONE G-zip all source files
 
 README Notes
-Comments removed when calculating file sizes
-No console.log for performance testing, as is relatively expensive operation
-Performance: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1
-Memory: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1 -s MAXIMUM_MEMORY=4GB
-Fewer items used for C performance test, as more memory is used --> can use -mx32 compile flag to reach more (though probably slower)
-Using fewer items for JS performance test, as memory error occurs
-Removing global variable from wasm.wat made time go from 8s->5s
-Time to allocate 4GB memory for wasm.js is only about 300 ms
-Growing memory in 100 page chunks results in ~33s execution time
-Using memory loads instead of a local variable for the WAT code showed only a slight increase in runtime
-The time for emscripten_run_script in the C code was measured to be approximately 0.2 milliseconds
-Adding compile time to WASM script has minimal effect (under 100 milliseconds)
+[compiled source used] Comments removed when calculating file sizes
+DONE No console.log for performance testing, as is relatively expensive operation
+DONE Performance: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1
+DONE Memory: emcc c.c -o c.js -s ALLOW_MEMORY_GROWTH=1 -s MAXIMUM_MEMORY=4GB
+DONE Fewer items used for C performance test, as more memory is used --> can use -mx32 compile flag to reach more (though probably slower)
+DONE Using fewer items for JS performance test, as memory error occurs
+DONE Removing global variable from wasm.wat made time go from 8s->5s
+DONE Time to allocate 4GB memory for wasm.js is only about 300 ms
+DONE Growing memory in 100 page chunks results in ~33s execution time
+DONE Using memory loads instead of a local variable for the WAT code showed only a slight increase in runtime
+DONE The time for emscripten_run_script in the C code was measured to be approximately 0.2 milliseconds
+DONE Adding compile time to WASM script has minimal effect (under 100 milliseconds)
+DONE Compiling with -s TOTAL_MEMORY=1999MB increases overall execution time by ~3s. Growing the memory before running the code still results in a ~2.5s increase.
 
-37/23.8 Internet Speed
+[] 37/23.8 Internet Speed

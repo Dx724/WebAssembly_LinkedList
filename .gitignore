@@ -1,2 +1,4 @@
 
 performance_testing/~$Results.xlsx
+*.db
+file_sizes/~$Results.xlsx
