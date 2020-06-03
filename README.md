@@ -43,3 +43,8 @@ Linked list implementations in C, Javascript, and WebAssembly Text Format
 
 <img src="file_sizes/chart1.png" alt="All 5 File Size Comparison" height="300px"/>
 <img src="file_sizes/chart2.png" alt="C-Excluded File Size Comparison" height="300px"/>
+
+# Conclusions
+- Overall, handwritten WebAssembly is much faster than Javascript code, and substantially faster than generated code as well.
+- Potential reasons for this include Javascript interpretation time costs, bulky-but-widely-compatible emscripten-generated functions, and unnecessary object metadata.
+- At internet speeds over 18 bits per second (1.8\*10<sup>-5</sup> Mbps), the WASM code would be a better choice overall.
