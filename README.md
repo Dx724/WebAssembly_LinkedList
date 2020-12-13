@@ -1,6 +1,8 @@
 # WebAssembly_LinkedList
 Linked list implementations in C, Javascript, and WebAssembly Text Format
 
+> _For matrix multiplication, see [here](https://github.com/Dx724/WebAssembly_Matrices)_
+
 - The code is separated into four types, with respectively named HTML and JS files.
 - The folders in the root directory contain the code as demos, which show results in the debug console for the traversal of a three item linked list.
 - The items in the LinkedLists are integers.
